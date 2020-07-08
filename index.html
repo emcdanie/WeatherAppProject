@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/e0dc62ea01.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="weather-app">
+            <form class="search-form" id="location">
+                <div class="row">
+                    <div class="col-6">
+                        <input type="search" placeholder="Enter your location.." class="form-control shadow-sm"
+                            autofocus="on" id="city-input" autocomplete="on" />
+                    </div>
+                    <div class="col-3">
+                        <input type="submit" id="search-button" value="search" class="btn btn-light shadow-sm" />
+                    </div>
+                    <div class="col-3">
+                        <button type="button" class="btn btn-light shadow-sm"
+                            id="current-location-button">Current</button>
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="weatherpage" id="city">
+                    </h1>
+                    <ul>
+                        <li class="title">Today </li>
+                        <li id="current-time"> </li>
+                        <li>
+                            <span id="status">Light rain showers and a gentle breeze</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-6">
+                    <div class="clearfix">
+                        <span> <img class="sunicon" src="src/images/sunhappy.svg"></span>
+                        <div class="float-right">
+                            <span class="temperature" id="temperature">19</span><span class="units">
+                                <a href="#" class=link id="celsius-link">°C</a> |
+                                <a href="#" class=link id="fahrenheit-link">°F</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li> Feels Like: <span id="feels-like"> </span> %</li>
+                        <li>Humidity: <span id="humidity"></span>%</li>
+                        <li>Wind: <span id="wind"></span> km/h</li>
+                    </ul>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-12">
+                    <p class="sunrise">
+                        <img class="icons" src="src/images/sunrise.svg">
+                        <class= daybreak> Sunrise <span id="sunrise"> </span> | Sunset <span id="sunset"> </span>
+                    </p>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-2 days">
+                    Mon
+                    <br />
+                    <img class="icons" src="src/images/rain.svg">
+                    <br />
+                    13°
+                </div>
+                <div class="col-2 days">
+                    Tue
+                    <br />
+                    <img class="icons" src="src/images/rainwlightning.svg">
+                    <br />
+                    14°
+                </div>
+                <div class="col-2 days">
+                    Wed
+                    <br />
+                    <img class="icons" src="src/images/rain.svg">
+                    <br />
+                    15°
+                </div>
+                <div class="col-2 days">
+                    Thu
+                    <br />
+                    <img class="icons" src="src/images/clouds.svg">
+                    <br />
+                    17°
+                </div>
+                <div class="col-2 days">
+                    Fri
+                    <br />
+                    <img class="icons" src="src/images/sunhappy.svg">
+                    <br />
+                    14°
+                </div>
+                <div class="col-2 days">
+                    Sat
+                    <br />
+                    <img class="icons" src="src/images/sunhappy.svg">
+                    <br />
+                    18°
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <br />
+                    <p class="interested">
+                        Interested in climate change ?
+                    </p>
+                </div>
+                <div class="col-4 ">
+                    <br />
+                    <input<button type="button" class="btn btn-light shadow-sm">Click Here</button>
+                </div>
+            </div>
+        </div>
+        <script src="src/script.js"></script>
+</body>
+
+</html>

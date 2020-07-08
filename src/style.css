@@ -1,0 +1,134 @@
+body {
+  font-family: "Quicksand", sans-serif;
+}
+h1 {
+  color: #fbdd57;
+  display: block;
+  margin: 15px;
+  text-transform: capitalize;
+}
+p {
+  color: white;
+  display: block;
+}
+ul {
+  margin: 20px;
+  padding: 0;
+}
+
+li {
+  color: white;
+  font-size: 20px;
+  font-weight: 20px;
+  line-height: 1.2;
+  list-style: none;
+}
+.title {
+  color: white;
+  font-size: 35px;
+  font-weight: 20px;
+  line-height: 1.2;
+  list-style: none;
+}
+.weatherpage {
+  font-size: 65px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  margin: 15px;
+  padding-bottom: 10px;
+  color: #fbdd57;
+}
+.form-control {
+  font-family: "Quicksand", sans-serif;
+}
+
+.btn.btn-light {
+  background-color: #fbdd57;
+  font-family: "Quicksand", sans-serif;
+  margin-left: 25px;
+  color: #5e8686;
+}
+
+.earth {
+  margin: 0 auto;
+  position: center;
+  width: 500px;
+  height: 500px;
+  border-radius: 100%;
+  box-shadow: 10px;
+}
+
+.card-body {
+  margin: 20px auto;
+  display: block;
+  color: #5e8686;
+}
+.location {
+  padding: 20px;
+  margin: 35px 20px;
+  position: relative;
+}
+
+.temperature {
+  color: white;
+  font-size: 60px;
+  font-weight: 300px;
+  line-height: 1;
+}
+.units {
+  position: relative;
+  top: -34px;
+  color: white;
+}
+.search-form {
+  margin: 25px;
+}
+.weather-app {
+  border: 1px solid #dadde1;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 600px;
+  background-color: #5e8686;
+  font-family: "Quicksand", sans-serif;
+}
+.predictions {
+  margin-right: 50px;
+}
+.interested {
+  color: white;
+  font-size: 25px;
+  margin-left: 15px;
+}
+.sunrise {
+  display: block;
+  color: #fbdd57;
+  font-size: 39px;
+  font-weight: 400px;
+}
+.daybreak {
+  display: block;
+  color: #fbdd57;
+  font-size: 25px;
+  font-weight: 20px;
+  margin-left: 15px;
+}
+.days {
+  text-align: center;
+  color: white;
+  font-size: 25px;
+}
+.icons {
+  height: 60px;
+  width: auto;
+}
+.sunicon {
+  height: 120px;
+  margin-left: 20px;
+  width: 110px;
+}
+
+.link {
+  color: #fbdd57;
+}

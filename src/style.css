@@ -123,15 +123,12 @@ li {
   height: 60px;
   width: auto;
 }
-.sunicon {
-  height: 120px;
-  margin-left: 20px;
-  width: 110px;
-}
 
 .link {
   color: #fbdd57;
 }
-.code {
-  color: #fbdd57;
+.weather-icon {
+  height: 120px;
+  margin-left: 20px;
+  width: 110px;
 }

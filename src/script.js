@@ -60,7 +60,6 @@ function searchCity(city, units) {
   let apiKey = "717c122d03da5b502d476732c8793a31";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
-  console.log("apiUrl");
 }
 
 function handleSubmit(event) {
@@ -75,6 +74,7 @@ function searchLocation(position) {
 
   axios.get(apiUrl).then(displayWeatherCondition);
 }
+
 // data funcitons
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -98,14 +98,70 @@ function displayWeatherCondition(response) {
     response.data.timezone,
     response.data.sys.sunset
   );
+
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
+let iconElement = document.querySelector("#icon");
+
 //links
+function displayFahrenheitConversions(event) {
+  function displayFahrenheitTemp(event) {
+    event.preventDefault();
+    let temperature = document.querySelector("#temperature");
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    let fahrTemp = (celsTemp * 9) / 5 + 32;
+    temperature.innerHTML = Math.round(fahrTemp);
+  }
+  displayFahrenheitTemp(event);
+
+  function displayForecastFahrTemp(event) {
+    event.preventDefault();
+    let forecastTemp = document.querySelectorAll("#forecast-cels-temp");
+    forecastTemp.forEach((forecast) => {
+      let forecastValue = forecast.innerHTML;
+      forecast.innerHTML = Math.round((forecastValue * 9) / 5 + 32);
+    });
+  }
+  displayForecastFahrTemp(event);
+  fahrenheitLink.removeEventListener("click", displayFahrenheitConversions);
+  celsiusLink.addEventListener("click", displayCelsiusConversions);
+}
+
+function displayCelsiusConversions(event) {
+  function displayCelsiusTemp(event) {
+    event.preventDefault();
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+    let temperature = document.querySelector("#temperature");
+    temperature.innerHTML = Math.round(celsTemp);
+  }
+  displayCelsiusTemp(event);
+
+  function displayForecastCelsTemp(event) {
+    event.preventDefault();
+    let forecastTemp = document.querySelectorAll("#forecast-cels-temp");
+    forecastTemp.forEach((forecast) => {
+      let forecastValue = forecast.innerHTML;
+      forecast.innerHTML = Math.round(((forecastValue - 32) * 5) / 9);
+    });
+  }
+  displayForecastCelsTemp(event);
+  celsiusLink.removeEventListener("click", displayCelsiusConversions);
+  fahrenheitLink.addEventListener("click", displayFahrenheitConversions);
+}
+
+let celsTemp = 0;
+
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", searchCity(city, "imperial"));
+fahrenheitLink.addEventListener("click", displayFahrenheitConversions);
 
 let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", searchCity(city, "metric"));
+celsiusLink.addEventListener("click", displayCelsiusConversions);
 
 //sunset and sunrise hours
 

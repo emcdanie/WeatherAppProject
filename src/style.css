@@ -7,6 +7,7 @@ h1 {
   margin: 15px;
   text-transform: capitalize;
 }
+
 p {
   color: white;
   display: block;
@@ -50,15 +51,6 @@ li {
   color: #5e8686;
 }
 
-.earth {
-  margin: 0 auto;
-  position: center;
-  width: 500px;
-  height: 500px;
-  border-radius: 100%;
-  box-shadow: 10px;
-}
-
 .card-body {
   margin: 20px auto;
   display: block;
@@ -93,9 +85,7 @@ li {
   background-color: #5e8686;
   font-family: "Quicksand", sans-serif;
 }
-.predictions {
-  margin-right: 50px;
-}
+
 .interested {
   color: white;
   font-size: 25px;
@@ -114,21 +104,9 @@ li {
   font-weight: 20px;
   margin-left: 15px;
 }
-.days {
-  text-align: center;
-  color: white;
-  font-size: 25px;
+.sunrise-icon {
+  height: 70px;
 }
-.icons {
-  height: 60px;
-  width: auto;
-}
-
 .link {
   color: #fbdd57;
-}
-.weather-icon {
-  height: 120px;
-  margin-left: 20px;
-  width: 110px;
 }

@@ -110,6 +110,11 @@ li {
 .link {
   color: #fbdd57;
 }
+.weather-icon {
+  height: 125px;
+  width: 125px;
+  margin: 0 auto;
+}
 
 .weather-forecast h3 {
   color: white;
@@ -131,7 +136,7 @@ li {
 .weather-forecast-temperature {
   text-align: center;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   height: auto;
   line-height: 15px;

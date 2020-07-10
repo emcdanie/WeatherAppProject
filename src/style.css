@@ -79,7 +79,7 @@ li {
 .weather-app {
   border: 1px solid #dadde1;
   padding: 15px;
-  margin: 20px auto;
+  margin: 30px auto;
   border-radius: 10px;
   max-width: 600px;
   background-color: #5e8686;
@@ -109,4 +109,30 @@ li {
 }
 .link {
   color: #fbdd57;
+}
+
+.weather-forecast h3 {
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  height: 15px;
+  line-height: 15px;
+  padding-top: 7px;
+}
+
+.weather-forecast img {
+  display: block;
+  margin: 0 auto;
+  height: 48px;
+  width: 48px;
+}
+
+.weather-forecast-temperature {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  height: auto;
+  line-height: 15px;
 }

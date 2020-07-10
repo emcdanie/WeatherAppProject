@@ -44,7 +44,7 @@ let currentTime = document.querySelector("#current-time");
 currentTime.innerHTML = formatDate();
 
 function formatHours(timestamp) {
-  let date = new Date();
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -88,7 +88,7 @@ function displayForecast(response) {
   for (let index = 0; index < 6; index++) {
     let forecast = response.data.list[index];
     forecastElement.innerHTML += `   
-  <div class="col-2 days">
+  <div class="col-2">
   <h3>
   ${formatHours(forecast.dt * 1000)}
   </h3>

@@ -89,13 +89,14 @@ function displayForecast(response) {
 
   for (let index = 0; index < 6; index++) {
     let forecast = response.data.list[index];
+    let prettyIcons = weatherIcons(forecast.weather[0].icon);
     forecastElement.innerHTML += `   
   <div class="col-2">
   <h3>
   ${formatHours(forecast.dt * 1000)}
   </h3>
   <img 
-  src = "http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+  src = ${prettyIcons}
 />
   <div class="weather-forecast-temperature">
   <strong>${Math.round(forecast.main.temp_max)}° |  </strong>${Math.round(
@@ -167,40 +168,45 @@ function displayWeatherCondition(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  let prettyIcons = weatherIcons(response.data.weather[0].icon);
 
-  if (response.data.weather[0].icon === "01d") {
-    iconSrc = "src/images/sun.svg";
-  } else if (response.data.weather[0].icon === "02d") {
-    iconSrc = "src/images/sun&cloud.svg";
-  } else if (response.data.weather[0].icon === "03d" || "03n") {
-    iconSrc = "src/images/clouds.svg";
-  } else if (response.data.weather[0].icon === "04d") {
-    iconSrc = "src/images/clouds.svg";
-  } else if (response.data.weather[0].icon === "09d") {
-    iconSrc = "src/images/rain.svg";
-  } else if (response.data.weather[0].icon === "10d" || "10n") {
-    iconSrc = "src/images/suncloudrain.png";
-  } else if (response.data.weather[0].icon === "11d" || "11n") {
-    iconSrc = "src/images/rainwlightning.svg";
-  } else if (response.data.weather[0].icon === "13d" || "13n") {
-    iconSrc = "src/images/snow.png";
-  } else if (response.data.weather[0].icon === "50d" || "50n") {
-    iconSrc = "src/images/smog.png";
-  } else if (response.data.weather[0].icon === "01n") {
-    iconSrc = "src/images/moon.png";
-  } else if (response.data.weather[0].icon === "02n") {
-    iconSrc = "src/images/cloud&moon.png";
-  } else if (response.data.weather[0].icon === "04n") {
-    iconSrc = "src/images/clouds.svg";
-  } else if (response.data.weather[0].icon === "09d") {
-    iconSrc = "src/images/suncloudrain.png";
-  } else {
-    iconSrc = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
-  }
-  iconElement.setAttribute("src", iconSrc);
+  iconElement.setAttribute("src", prettyIcons);
 }
 let iconElement = document.querySelector("#icon");
 let iconSrc = "";
+
+function weatherIcons(icon) {
+  if (icon === "01d") {
+    iconSrc = "src/images/sun.svg";
+  } else if (icon === "02d") {
+    iconSrc = "src/images/sun&cloud.svg";
+  } else if (icon === "03d" || "03n") {
+    iconSrc = "src/images/clouds.svg";
+  } else if (icon === "04d") {
+    iconSrc = "src/images/clouds.svg";
+  } else if (icon === "09d") {
+    iconSrc = "src/images/rain.svg";
+  } else if (icon === "10d" || "10n") {
+    iconSrc = "src/images/suncloudrain.png";
+  } else if (icon === "11d" || "11n") {
+    iconSrc = "src/images/rainwlightning.svg";
+  } else if (icon === "13d" || "13n") {
+    iconSrc = "src/images/snow.png";
+  } else if (icon === "50d" || "50n") {
+    iconSrc = "src/images/smog.png";
+  } else if (icon === "01n") {
+    iconSrc = "src/images/moon.png";
+  } else if (icon === "02n") {
+    iconSrc = "src/images/cloud&moon.png";
+  } else if (icon === "04n") {
+    iconSrc = "src/images/clouds.svg";
+  } else if (icon === "09d") {
+    iconSrc = "src/images/suncloudrain.png";
+  } else {
+    iconSrc = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+  }
+  return iconSrc;
+}
 //sunset and sunrise hours
 
 function UTCtoTwentyFourHours(timeZone, time) {

@@ -180,19 +180,19 @@ function weatherIcons(icon) {
     iconSrc = "src/images/sun.svg";
   } else if (icon === "02d") {
     iconSrc = "src/images/sun&cloud.svg";
-  } else if (icon === "03d" || "03n") {
+  } else if (icon === "03d" || icon === "03n") {
     iconSrc = "src/images/clouds.svg";
   } else if (icon === "04d") {
     iconSrc = "src/images/clouds.svg";
   } else if (icon === "09d") {
     iconSrc = "src/images/rain.svg";
-  } else if (icon === "10d" || "10n") {
+  } else if (icon === "10d" || icon === "10n") {
     iconSrc = "src/images/suncloudrain.png";
-  } else if (icon === "11d" || "11n") {
+  } else if (icon === "11d" || icon === "11n") {
     iconSrc = "src/images/rainwlightning.svg";
-  } else if (icon === "13d" || "13n") {
+  } else if (icon === "13d" || icon === "13n") {
     iconSrc = "src/images/snow.png";
-  } else if (icon === "50d" || "50n") {
+  } else if (icon === "50d" || icon === "50n") {
     iconSrc = "src/images/smog.png";
   } else if (icon === "01n") {
     iconSrc = "src/images/moon.png";

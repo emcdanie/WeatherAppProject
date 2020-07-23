@@ -4,13 +4,14 @@ body {
 h1 {
   color: #fbdd57;
   display: block;
-  margin: 15px;
+  font-size: 40px;
   text-transform: capitalize;
 }
 
 p {
   color: white;
   display: block;
+  margin-left: 15px;
 }
 ul {
   margin: 20px;
@@ -19,7 +20,7 @@ ul {
 
 li {
   color: white;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 20px;
   line-height: 1.2;
   list-style: none;
@@ -30,6 +31,7 @@ li {
   font-weight: 20px;
   line-height: 1.2;
   list-style: none;
+  margin-right: 5px;
 }
 .weatherpage {
   font-size: 65px;
@@ -110,6 +112,7 @@ li {
 .link {
   color: #fbdd57;
 }
+
 .weather-icon {
   height: 125px;
   width: 125px;
